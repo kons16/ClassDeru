@@ -34,3 +34,6 @@ https://classderu.herokuapp.com/
 ## Environment variables
 * `ALLOW_IPS`: The subnet masks, IP addresses or host names of the terminal that is allowed to attend (ex `123.45.67.0/24 124.56.0.0/16 125.67.12.11 hoge.co.jp`)
 * `DENY_IPS`: The subnet masks, IP addresses or host names of the terminal that is denied to attend (ex. `123.45.67.0/24 124.56.0.0/16 125.67.12.11 hoge.co.jp`)
+
+## License
+MIT
