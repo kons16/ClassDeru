@@ -2,7 +2,7 @@
 
 <!-- ログインしている教員側に表示する授業登録画面 -->
 @section('content')
-<div style="text-align: center;">
+<div align="center">
     <div class="container">
         <div class="col-sm-offset-2 col-sm-8">
 
