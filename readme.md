@@ -1,17 +1,19 @@
-## ClassDeru
-大学で授業の出席を簡単に取ることのできるWebアプリです。
+# ClassDeru
+[![Maintainability](https://api.codeclimate.com/v1/badges/42ac05f746e434f7dd29/maintainability)](https://codeclimate.com/github/kons16/ClassDeru/maintainability)
+大学で授業の出席を簡単に取ることのできるWebアプリです.
 
-<img width="500" alt="2018-12-06 21 47 39" src="https://user-images.githubusercontent.com/31591102/49585184-07c1ea80-f9a1-11e8-95d6-062a5337c173.png">
-
-## 作者
+## Author
 Kono Shinji
 
-## 機能
-学生は授業のパスワードを入力することで簡単に出席できます。
-<img width="500" alt="2018-12-06 21 48 39" src="https://user-images.githubusercontent.com/31591102/49585313-5bcccf00-f9a1-11e8-941a-58a9c8ff772c.png">
+## Description
+アカウント登録後, ClassDeruで使用できる主な機能です.
+* 学生は現在開講されている授業にワンクリックで出席することができます.
+* 教員はリアルタイムに出席者を確認することができ, csvやtxtの形式で出席した学生一覧をダウンロードできます.
+* 事前に許可するIPアドレスを設定することにより, 大学内からでしか出席できないよう指定できます. 
 
-教員は出席している学生の一覧をcsv,txt形式でDLすることができ、リアルタイムに出席者を確認できます。
-<img width="500" alt="2018-12-06 21 49 46" src="https://user-images.githubusercontent.com/31591102/49585356-799a3400-f9a1-11e8-9a3f-06a83ec5f200.png">
+<img width="400" alt="2018-12-06 21 48 39" src="https://user-images.githubusercontent.com/31591102/49585313-5bcccf00-f9a1-11e8-941a-58a9c8ff772c.png">
+
+<img width="400" alt="2018-12-06 21 49 46" src="https://user-images.githubusercontent.com/31591102/49585356-799a3400-f9a1-11e8-9a3f-06a83ec5f200.png">
 
 
 ## URL
