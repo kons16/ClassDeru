@@ -1,4 +1,5 @@
 # ClassDeru
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Maintainability](https://api.codeclimate.com/v1/badges/42ac05f746e434f7dd29/maintainability)](https://codeclimate.com/github/kons16/ClassDeru/maintainability)  
 大学で授業の出席を簡単に取ることのできるWebアプリです.
 
