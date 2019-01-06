@@ -27,6 +27,7 @@ https://classderu.herokuapp.com/
 1. Run `git clone https://github.com/kons16/ClassDeru` (Clone this repository)
 1. Run `git clone https://github.com/kons16/classderu_sub_laradock laradock` (Clone laradock repository)
 1. Run `cd laradock` (Move the working directory)
+1. Run `cp env-example .env` (Apply the settings)
 1. Run `docker-compose up -d nginx postgres` (Build and start docker containers)
 1. Run `docker-compose exec workspace bash ClassDeru/setup.sh` (Setup the docker containers)
 1. Access to https://localhost/
