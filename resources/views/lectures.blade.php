@@ -2,7 +2,7 @@
 
 <!-- ログインしている教員側に表示する授業登録画面 -->
 @section('content')
-<div align="center">
+<center>
     <div class="container">
         <div class="col-sm-offset-2 col-sm-8">
 
@@ -249,7 +249,7 @@
             </table>
         </div>
     </div>
-</div>
+</center>
 @else
 
 <div class="container mt-2">

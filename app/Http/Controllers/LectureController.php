@@ -85,6 +85,7 @@ class LectureController extends Controller
         // 出席者を取得
         $attendallname = \DB::table('lecture_students')->where('lid', $lecture)->pluck('sname');
         $attendallid = \DB::table('lecture_students')->where('lid', $lecture)->pluck('sid');
+        $attendallmail = \DB::table('users')->where('student_id', $attendallid)->pluck('email');
 
         // 全出席者数を取得
         $syuseki_num = \DB::table('lecture_students')->where('lid', $lecture)->count();
@@ -103,6 +104,7 @@ class LectureController extends Controller
         # 文字コード変換
         mb_convert_variables('SJIS-win', 'UTF-8', $attendallname);
         mb_convert_variables('SJIS-win', 'UTF-8', $attendallid);
+        mb_convert_variables('SJIS-win', 'UTF-8', $attendallmail);
 
         header('Content-Type: application/octet-stream');
         header("Content-Disposition: attachment; filename={$title}_出席者.csv");
@@ -130,9 +132,9 @@ class LectureController extends Controller
         $data = [""];
         fputcsv($stream, $data);
 
-        // 出席番号,学生番号,名前 で格納していく
+        // 出席番号,学生番号,名前,メールアドレス で格納していく
         for ($i = 0; $i < count($attendallname); $i++) {
-            $data = [$i + 1, $attendallid[$i], $attendallname[$i]];
+            $data = [$i + 1, $attendallid[$i], $attendallname[$i], $attendallmail[$i]];
             fputcsv($stream, $data);
         }
     }
@@ -144,6 +146,7 @@ class LectureController extends Controller
         // 出席者の名前と学生番号を取得
         $attendallname = \DB::table('lecture_students')->where('lid', $lecture)->pluck('sname');
         $attendallid = \DB::table('lecture_students')->where('lid', $lecture)->pluck('sid');
+        $attendallmail = \DB::table('users')->where('student_id', $attendallid)->pluck('email');
 
         // 全出席者数を取得
         $syuseki_num = \DB::table('lecture_students')->where('lid', $lecture)->count();
@@ -162,6 +165,7 @@ class LectureController extends Controller
         # 文字コード変換
         mb_convert_variables('SJIS-win', 'UTF-8', $attendallname);
         mb_convert_variables('SJIS-win', 'UTF-8', $attendallid);
+        mb_convert_variables('SJIS-win', 'UTF-8', $attendallmail);
 
         header('Content-Type: application/octet-stream');
         header("Content-Disposition: attachment; filename={$title}_出席者");
@@ -189,9 +193,9 @@ class LectureController extends Controller
         $data = [""];
         fputcsv($stream, $num, $data);
 
-        // 出席番号,学生番号,名前 で格納していく
+        // 出席番号,学生番号,名前,メールアドレス で格納していく
         for ($i = 0; $i < count($attendallname); $i++) {
-            $data = [$i + 1, $attendallid[$i], $attendallname[$i]];
+            $data = [$i + 1, $attendallid[$i], $attendallname[$i], $attendallmail[$i]];
             fputcsv($stream, $data);
         }
     }
@@ -268,6 +272,7 @@ class LectureController extends Controller
     public function clickUser(Request $request, $lecture)
     {
         $user = Auth::user();
+        /*
         $ip = getenv('HTTP_X_FORWARDED_FOR');
 
         if (!$ip) {
@@ -285,6 +290,7 @@ class LectureController extends Controller
         }
 
         if (self::check_ip($ip, $ips_list)) {
+            */
             // 授業のパスワードを取得
             $pass = \DB::table('lectures')->where('id', $lecture)->value('lecpass');
 
@@ -310,7 +316,7 @@ class LectureController extends Controller
                 return redirect('/user')->with('my_status_2', __('パスワードが違います。'));
             }
 
-        }
+        //}
 
         return redirect('/user')->with('my_status_2', __('教室内から出席してください。'));
     }
