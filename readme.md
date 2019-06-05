@@ -19,6 +19,7 @@ Kono Shinji
 
 ## URL
 https://classderu.herokuapp.com/  
+(茨城大学内からのみ出席できます)
 
 ## Deploy to Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
