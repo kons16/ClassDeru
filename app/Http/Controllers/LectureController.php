@@ -273,6 +273,7 @@ class LectureController extends Controller
     {
         $user = Auth::user();
         
+        /*
         $ip = getenv('HTTP_X_FORWARDED_FOR');
 
         if (!$ip) {
@@ -290,6 +291,7 @@ class LectureController extends Controller
         }
 
         if (self::check_ip($ip, $ips_list)) {
+            */
             // 授業のパスワードを取得
             $pass = \DB::table('lectures')->where('id', $lecture)->value('lecpass');
 
@@ -315,7 +317,7 @@ class LectureController extends Controller
                 return redirect('/user')->with('my_status_2', __('パスワードが違います。'));
             }
 
-        }
+        //}
 
         return redirect('/user')->with('my_status_2', __('教室内から出席してください。'));
     }
