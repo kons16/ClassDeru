@@ -20,22 +20,3 @@ Kono Shinji
 ## URL
 https://classderu.herokuapp.com/  
 (茨城大学内からのみ出席できます)
-
-## Deploy to Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## How to develop
-1. Install [Git](https://git-scm.com/downloads), [Docker CE](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/)
-1. Run `mkdir hoge` (Make root directory)
-1. Run `cd hoge` (Move the working directory)
-1. Run `git clone https://github.com/kons16/ClassDeru` (Clone this repository)
-1. Run `git clone https://github.com/kons16/classderu_sub_laradock laradock` (Clone laradock repository)
-1. Run `cd laradock` (Move the working directory)
-1. Run `cp env-example .env` (Apply the settings)
-1. Run `docker-compose up -d nginx postgres` (Build and start docker containers)
-1. Run `docker-compose exec workspace bash ClassDeru/setup.sh` (Setup the docker containers)
-1. Access to https://localhost/
-
-## Environment variables
-* `ALLOW_IPS`: The subnet masks, IP addresses or host names of the terminal that is allowed to attend (ex `123.45.67.0/24 124.56.0.0/16 125.67.12.11 hoge.co.jp`)
-* `DENY_IPS`: The subnet masks, IP addresses or host names of the terminal that is denied to attend (ex. `123.45.67.0/24 124.56.0.0/16 125.67.12.11 hoge.co.jp`)  
